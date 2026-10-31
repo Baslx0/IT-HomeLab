@@ -10,8 +10,8 @@ This is a **separate physical host** from the Windows/Active Directory IT HomeLa
 | Kali Linux VM | Desktop PC, VMware | Existing |
 | Ubuntu Server VM | Desktop PC, VMware | Existing; Ubuntu 26.04 LTS observed |
 | Windows VM | Desktop PC, VMware | Existing; exact guest version not yet verified |
-| Docker Engine on Ubuntu Server | Desktop PC | Planned; not installed yet |
-| DVWA container | Ubuntu Server VM | Planned |
+| Docker Engine and Compose on Ubuntu Server | Desktop PC | Installed |
+| DVWA | Ubuntu Server VM | Installed (reported); access/network not yet verified |
 | OWASP Juice Shop / WebGoat | Ubuntu Server VM | Optional future additions |
 | Metasploitable 2 / other vulnerable VMs | VMware | Optional future additions |
 
@@ -23,8 +23,8 @@ This is a **separate physical host** from the Windows/Active Directory IT HomeLa
 Desktop PC — VMware
 ├── Kali Linux VM                 (security testing)
 ├── Ubuntu Server 26.04 LTS VM    (Docker host, planned)
-│   ├── DVWA                     (planned)
-│   ├── OWASP Juice Shop          (optional)
+│   ├── DVWA                     (installed)
+│   ├── OWASP Juice Shop          (planned)
 │   └── WebGoat                   (optional)
 └── Windows VM                    (Windows security exercises)
 
@@ -48,10 +48,9 @@ Containers complement the existing virtual machines; they do **not** replace Kal
 1. Verify desktop host OS, CPU, RAM, VMware edition, guest OS versions, and current virtual network settings.
 2. Create/verify a dedicated isolated VMware virtual network for testing.
 3. Take VM snapshots.
-4. Install Docker Engine and Compose on the existing Ubuntu Server VM.
-5. Deploy DVWA only on the isolated lab network; verify Kali can reach it without internet exposure.
+4. Verify DVWA network binding and confirm Kali can reach it on an isolated lab network.
 6. Document tested IPs and add screenshots/evidence only after verified.
 
 ## Documentation status
 
-This document captures the architecture and intended additions described during planning. Docker, DVWA, and other intentionally vulnerable targets are **not** being claimed as deployed.
+This document captures the architecture and intended additions described during planning. Docker and DVWA are installed per user report; network access from Kali has not yet been verified. Other intentionally vulnerable targets remain optional.
