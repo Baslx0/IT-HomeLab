@@ -41,7 +41,7 @@ This repository now documents **two separate setups**, not one shared VM host:
 | IT / Active Directory lab | Windows 11 Pro | Hyper-V | Windows Server, AD DS, DNS and domain-client administration |
 | Cybersecurity lab | Windows 11 Pro | VMware | Kali, Ubuntu Server and Windows security testing |
 
-The desktop Cybersecurity Lab currently has Kali Linux, Ubuntu Server 26.04 LTS and a Windows VM. **Docker, DVWA and other intentionally vulnerable targets are planned, not installed.** See [Cybersecurity Lab architecture and roadmap](docs/cybersecurity-lab.md). The labs must remain logically and physically distinct, particularly when running deliberately vulnerable targets.
+The Cybersecurity Lab currently has Kali Linux, Ubuntu Server 26.04 LTS and a Windows VM. **Docker, DVWA and other intentionally vulnerable targets are planned, not installed.** See [Cybersecurity Lab architecture and roadmap](docs/cybersecurity-lab.md). The labs must remain logically and physically distinct, particularly when running deliberately vulnerable targets.
 
 To minimize switching between machines, use one main workstation to connect to the other **host** over a trusted management network (for example Windows Remote Desktop where supported). Keep the vulnerable VM network isolated; do not expose lab services to the public internet.
 
