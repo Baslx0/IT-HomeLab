@@ -8,12 +8,13 @@ This is a **separate physical host** from the Windows/Active Directory IT HomeLa
 |---|---|---|
 | Cybersecurity host | Desktop PC, VMware | Existing |
 | Kali Linux VM | Desktop PC, VMware | Existing |
-| Ubuntu Server VM | Desktop PC, VMware | Existing; Ubuntu 26.04 LTS observed |
+| Ubuntu Server VM | Desktop PC, VMware | Existing; currently set aside / powered down |
 | Windows VM | Desktop PC, VMware | Existing; exact guest version not yet verified |
 | Docker Engine and Compose on Ubuntu Server | Desktop PC | Installed |
-| DVWA | Ubuntu Server VM | Installed (reported); access/network not yet verified |
+| DVWA | Ubuntu Server VM | Installed and accessed from Kali; temporarily not in use |
 | OWASP Juice Shop / WebGoat | Ubuntu Server VM | Optional future additions |
-| Metasploitable 2 / other vulnerable VMs | VMware | Optional future additions |
+| Metasploitable 2 | Desktop PC, VMware | Current preferred intentionally vulnerable training VM |
+| Other vulnerable VMs | VMware | Optional future additions |
 
 **Important:** The Windows VM on the desktop is distinct from the Windows 10 Education domain client `CL01` in the laptop's Active Directory lab. The laptop host is documented as Windows 11 Pro; the desktop host OS and hardware specs have not been confirmed.
 
@@ -22,7 +23,8 @@ This is a **separate physical host** from the Windows/Active Directory IT HomeLa
 ```text
 Desktop PC — VMware
 ├── Kali Linux VM                 (security testing)
-├── Ubuntu Server 26.04 LTS VM    (Docker host, planned)
+├── Metasploitable 2 VM           (current practice target)
+├── Ubuntu Server 26.04 LTS VM    (powered down for now)
 │   ├── DVWA                     (installed)
 │   ├── OWASP Juice Shop          (planned)
 │   └── WebGoat                   (optional)
@@ -48,9 +50,9 @@ Containers complement the existing virtual machines; they do **not** replace Kal
 1. Verify desktop host OS, CPU, RAM, VMware edition, guest OS versions, and current virtual network settings.
 2. Create/verify a dedicated isolated VMware virtual network for testing.
 3. Take VM snapshots.
-4. Verify DVWA network binding and confirm Kali can reach it on an isolated lab network.
-6. Document tested IPs and add screenshots/evidence only after verified.
+4. Keep Metasploitable 2 and Kali on an isolated VMware host-only network; verify access and document findings.
+5. Document tested IPs and add screenshots/evidence only after verified.
 
 ## Documentation status
 
-This document captures the architecture and intended additions described during planning. Docker and DVWA are installed per user report; network access from Kali has not yet been verified. Other intentionally vulnerable targets remain optional.
+This document captures the architecture and intended additions described during planning. Docker and DVWA were installed on Ubuntu, and Kali successfully accessed DVWA. The user is switching practice to Metasploitable 2 and setting Ubuntu aside; no deletion is planned.
