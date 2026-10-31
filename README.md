@@ -32,11 +32,24 @@ DHCP is intentionally not configured yet. Static addressing is being used while 
 - Prepare for CompTIA A+ and entry-level IT Support / Help Desk work.
 - Build a public portfolio of practical, reproducible IT labs.
 
+## Two physical home labs
+
+This repository now documents **two separate setups**, not one shared VM host:
+
+| Lab | Physical host | Virtualization | Purpose |
+|---|---|---|---|
+| IT / Active Directory lab | Laptop, Windows 11 Pro | Hyper-V | Windows Server, AD DS, DNS and domain-client administration |
+| Cybersecurity lab | Desktop PC (host OS not yet verified) | VMware | Kali, Ubuntu Server and Windows security testing |
+
+The desktop Cybersecurity Lab currently has Kali Linux, Ubuntu Server 26.04 LTS and a Windows VM. **Docker, DVWA and other intentionally vulnerable targets are planned, not installed.** See [Cybersecurity Lab architecture and roadmap](docs/cybersecurity-lab.md). The labs must remain logically and physically distinct, particularly when running deliberately vulnerable targets.
+
+To minimize switching between machines, use one main workstation to connect to the other **host** over a trusted management network (for example Windows Remote Desktop where supported). Keep the vulnerable VM network isolated; do not expose lab services to the public internet.
+
 ## Lab Platform
 
-The primary virtualization platform is **Microsoft Hyper-V** running on a **Windows 11 Pro** host.
+The **laptop IT lab** uses **Microsoft Hyper-V** on **Windows 11 Pro**. The separate desktop cybersecurity lab uses **VMware**.
 
-### Current Architecture
+### Laptop IT Lab — Current Architecture
 
 ```text
 Windows 11 Pro Host
@@ -72,6 +85,7 @@ IT-HomeLab/
 │   └── github/              # Curated showcase media only
 ├── docs/
 │   ├── architecture.md
+│   ├── cybersecurity-lab.md
 │   ├── environment.md
 │   ├── network-diagram.md
 │   └── network-plan.md
