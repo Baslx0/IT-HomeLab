@@ -120,5 +120,6 @@ I am an Associate of Science in Computer and Information Technology candidate at
 
 ## Contact
 
-**Basil Albarazi**  
-LinkedIn: https://www.linkedin.com/in/basil-albarazi/
+**Basil Albarazi**
+X: https://x.com/Baslx0
+Email: baslx0.dev@gmail.com
