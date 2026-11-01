@@ -1,4 +1,4 @@
-# IT HomeLab
+# IT HomeLab | Cybersecurity-Lab
 
 A hands-on IT home lab built to strengthen my practical IT support, Windows administration, networking, virtualization, and troubleshooting skills while preparing for entry-level IT Support / Help Desk roles.
 
