@@ -78,23 +78,37 @@ The environment will expand only when a lab requires it.
 
 ## Repository Structure
 
+The repository is organized into two learning tracks. **The repository name and URL remain unchanged**, and legacy documents retain their existing paths so earlier links continue to work.
+
 ```text
 IT-HomeLab/
-├── README.md
+├── README.md                    # Portfolio landing page
+├── IT/
+│   └── README.md                # Infrastructure / AD / networking track
+├── Cybersecurity/
+│   ├── README.md                # Security lab track
+│   └── LLM-Security/
+│       └── README.md            # Local chatbot testing project plan
 ├── assets/
-│   └── github/              # Curated showcase media only
-├── docs/
+│   └── github/                  # Curated showcase media
+├── docs/                        # Existing documentation; links preserved
 │   ├── architecture.md
 │   ├── cybersecurity-lab.md
 │   ├── environment.md
 │   ├── network-diagram.md
 │   └── network-plan.md
-├── labs/
-├── scenarios/
-└── templates/
+├── labs/                        # Existing labs; not moved
+├── scenarios/                   # Existing scenarios; not moved
+└── templates/                   # Existing templates; not moved
 ```
 
-Local/raw media for LinkedIn and personal evidence is excluded from Git via `.gitignore`.
+### Browse the labs
+
+- **[IT track](IT/README.md):** Hyper-V, Windows Server, Active Directory, DNS, networking and troubleshooting.
+- **[Cybersecurity track](Cybersecurity/README.md):** VMware security lab, web application testing and defense.
+- **[LLM Security lab](Cybersecurity/LLM-Security/README.md):** Planned local Ollama-powered fictional store chatbot and OWASP LLM test cases.
+
+Existing documents and media remain at their original paths to avoid breaking existing links. Local/raw media for LinkedIn and personal evidence is excluded from Git via `.gitignore`.
 
 ## Progress
 
