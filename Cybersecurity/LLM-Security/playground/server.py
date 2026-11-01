@@ -168,11 +168,19 @@ class Handler(BaseHTTPRequestHandler):
                 response = ollama_json("/api/chat", {
                     "model": model,
                     "stream": False,
+                    "think": False,  # Qwen3: keep the token budget for visible answers
                     "messages": model_messages(lab, mode, prompt),
-                    "options": {"num_predict": 320, "num_ctx": 2048, "temperature": 0.2},
+                    "options": {"num_predict": 512, "num_ctx": 2048, "temperature": 0.2},
                 })
-                output = response.get("message", {}).get("content", "")
-                self.send_json(200, {"type": "live_model", "output": output or "(No text returned.)",
+                message = response.get("message") or {}
+                output = message.get("content") or ""
+                if not output.strip():
+                    details = response.get("done_reason", "unknown")
+                    self.send_json(502, {"error": "Ollama returned no visible response. "
+                                              f"Completion reason: {details}. Try a shorter prompt, "
+                                              "another installed model, or increase num_predict."})
+                    return
+                self.send_json(200, {"type": "live_model", "output": output,
                                      "lesson": "Model behavior is probabilistic; these prompts are not security guarantees.",
                                      "disclaimer": "Live local Ollama response. Compare outputs; a successful injection is not guaranteed."})
             else:
