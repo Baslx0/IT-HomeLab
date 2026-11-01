@@ -3,7 +3,7 @@
 Hands-on security projects on a **separate desktop VMware host**, including authorized offensive testing, defense and documentation.
 
 ## Lab tracks
-- [LLM Security](LLM-Security/README.md) — local demo chatbot, prompt-injection testing and mitigations (planned)
+- [LLM Security](LLM-Security/README.md) — interactive local playground MVP with ten lessons, Ollama integration and simulation exercises
 - Web security — DVWA installed on Ubuntu Server; Metasploitable 2 is the current preferred vulnerable VM
 - Detection and defensive exercises — planned
 
