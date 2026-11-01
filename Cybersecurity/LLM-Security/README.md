@@ -20,3 +20,7 @@ Select a scenario or Free roam. Send a message, inspect the actual local model r
 All ten guided labs and Free roam use the local Ollama model. Responses vary by model and prompt. The observation panel flags a few fictional marker leaks or suspicious claims; it is not a complete security assessment. No real refunds, installations, batch requests, purchases, or cross-tenant access occur. Markup in replies is displayed as text.
 
 The server binds to loopback only. Lesson IDs are internal and are not a claim of exact OWASP version numbering. This is a teaching lab, not a production security control.
+
+## Real project test cases
+
+- [Case Study 001 — Instruction Override in a Local IT Assistant](case-studies/001-it-agent-instruction-override.md): an observed prompt-injection test against the separately maintained [Building-Agents](https://github.com/Baslx0/Building-Agents) learning project. The original source code and repository path were not altered.
